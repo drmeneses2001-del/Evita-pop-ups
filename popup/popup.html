@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Evita Pop-ups y Anuncios</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <img src="../icons/icon48.png" alt="" />
+    <h1>Evita Pop-ups y Anuncios</h1>
+  </header>
+
+  <section class="row">
+    <span>Protección activada</span>
+    <label class="switch">
+      <input type="checkbox" id="enabledToggle" />
+      <span class="slider"></span>
+    </label>
+  </section>
+
+  <section class="stats">
+    <div>
+      <strong id="siteCount">0</strong>
+      <span>bloqueados en este sitio</span>
+    </div>
+    <div>
+      <strong id="totalCount">0</strong>
+      <span>bloqueados en total</span>
+    </div>
+  </section>
+
+  <section class="row">
+    <span id="siteLabel">este sitio</span>
+    <button id="whitelistBtn">Permitir en este sitio</button>
+  </section>
+
+  <footer>
+    <a id="optionsLink" href="#">Más opciones</a>
+  </footer>
+
+  <script src="popup.js"></script>
+</body>
+</html>
