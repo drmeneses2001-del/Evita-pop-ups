@@ -1,0 +1,184 @@
+# Parámetros del modelo de microsimulación de la detención en el segundo periodo.
+# tipo: "literatura" = valor tomado de una fuente publicada (ver campo fuente)
+#       "supuesto"   = valor ilustrativo SIN fuente directa; debe calibrarse con la auditoría local (Fase 1a)
+# dist: distribución para el análisis probabilístico (uniforme [bajo, alto] o lognormal [media_log, de_log])
+
+cohorte:
+  p_plano_medio:
+    base: 0.40
+    dist: [uniforme, 0.20, 0.60]
+    tipo: supuesto
+    desc: Proporción de detenciones con la presentación en plano medio (estación 0 a +1) frente a plano bajo (>= +2)
+    fuente: Calibrar con auditoría local
+  p_mala_posicion:
+    base: 0.30
+    dist: [uniforme, 0.15, 0.45]
+    tipo: supuesto
+    desc: Proporción en occipito-posterior u occipito-transversa
+    fuente: Calibrar con auditoría local
+  p_diag_prematuro:
+    base: 0.30
+    dist: [uniforme, 0.10, 0.50]
+    tipo: supuesto
+    desc: Proporción de "detenciones" que no cumplían criterios de detención verdadera (hipótesis H2)
+    fuente: Criterios ACOG/SMFM 2014; proporción local por auditoría
+  p_urgencia_fetal:
+    base: 0.15
+    dist: [uniforme, 0.05, 0.25]
+    tipo: supuesto
+    desc: Proporción con compromiso fetal que exige nacimiento expedito (sin tiempo adicional)
+    fuente: Calibrar con auditoría local
+
+evolucion:
+  p_ve_tiempo_prematuro:
+    base: 0.60
+    dist: [uniforme, 0.40, 0.80]
+    tipo: supuesto
+    desc: Probabilidad de parto vaginal espontáneo con tiempo adicional si el diagnóstico de detención era prematuro
+    fuente: Supuesto; Cahill 2018 y Rouse 2009 informan sobre la duración del expulsivo pero no este parámetro
+  p_ve_tiempo_verdadera_oa:
+    base: 0.15
+    dist: [uniforme, 0.05, 0.30]
+    tipo: supuesto
+    desc: Probabilidad de parto espontáneo con tiempo adicional en detención verdadera con occipito-anterior
+    fuente: Supuesto
+  p_ve_tiempo_verdadera_op:
+    base: 0.08
+    dist: [uniforme, 0.02, 0.15]
+    tipo: supuesto
+    desc: Igual que el anterior para OP/OT no rotada
+    fuente: Supuesto
+  p_exito_rotacion:
+    base: 0.65
+    dist: [uniforme, 0.50, 0.80]
+    tipo: supuesto
+    desc: Probabilidad de que la rotación manual lleve a occipito-anterior
+    fuente: Supuesto; los ensayos PROPOP (Blanc 2021) y POP-OUT (Phipps 2021) evaluaron otro desenlace (parto operatorio)
+  p_instrumentado_practica_actual:
+    base: 0.03
+    dist: [uniforme, 0.01, 0.06]
+    tipo: supuesto
+    desc: Proporción de detenciones resueltas con instrumento en la práctica actual (estrategia E1)
+    fuente: Calibrar; referencia local de fórceps 0.6 % de los partos en UMAE HGO 4 (tesis UNAM)
+
+instrumento:
+  falla_ventosa_plano_bajo:
+    base: 0.137
+    dist: [uniforme, 0.10, 0.18]
+    tipo: literatura
+    desc: Probabilidad de falla de la ventosa (operador promedio)
+    fuente: Verma 2021, Cochrane CD005455 (137 por 1,000); rango supuesto
+  rr_falla_forceps_vs_ventosa:
+    base: 0.58
+    dist: [uniforme, 0.45, 0.75]
+    tipo: literatura
+    desc: Riesgo relativo de falla del fórceps frente a la ventosa
+    fuente: Verma 2021 (RR 0.58, certeza baja); rango supuesto
+  mult_falla_plano_medio:
+    base: 2.0
+    dist: [uniforme, 1.5, 3.0]
+    tipo: supuesto
+    desc: Multiplicador de la falla del instrumento en plano medio
+    fuente: Supuesto
+  k_competencia_falla:
+    base: 1.5
+    dist: [uniforme, 0.5, 2.5]
+    tipo: supuesto
+    desc: Pendiente del efecto de la competencia sobre la falla (multiplicador = exp(k*(0.5-c)))
+    fuente: Supuesto; lo reemplaza la Fase 4 (curvas de aprendizaje)
+  k_competencia_trauma:
+    base: 1.0
+    dist: [uniforme, 0.3, 2.0]
+    tipo: supuesto
+    desc: Pendiente del efecto de la competencia sobre el trauma materno y neonatal del instrumento
+    fuente: Supuesto; lo reemplaza la Fase 4
+
+materno:
+  oasis_espontaneo:
+    base: 0.04
+    dist: [uniforme, 0.02, 0.06]
+    tipo: supuesto
+    desc: Desgarro de 3.er y 4.º grado en parto espontáneo de nulípara
+    fuente: Supuesto; obtener tasa local
+  oasis_ventosa:
+    base: 0.08
+    dist: [uniforme, 0.05, 0.12]
+    tipo: supuesto
+    desc: Desgarro de 3.er y 4.º grado con ventosa
+    fuente: Supuesto; obtener tasa local
+  rr_oasis_forceps_vs_ventosa:
+    base: 1.83
+    dist: [lognormal, 0.6043, 0.1680]
+    tipo: literatura
+    desc: Riesgo relativo de desgarro de 3.er y 4.º grado, fórceps frente a ventosa
+    fuente: Verma 2021 (RR 1.83; IC 95 % 1.32-2.55)
+  extension_histerotomia_cesarea_expulsivo:
+    base: 0.12
+    dist: [uniforme, 0.05, 0.20]
+    tipo: supuesto
+    desc: Extensión de la histerotomía en cesárea con dilatación completa
+    fuente: Supuesto; Murphy 2001 y Peled 2024 documentan la morbilidad pero no se extrajo esta tasa
+
+neonatal:
+  hic_espontaneo:
+    base: 0.000526   # 1/1900
+    dist: [uniforme, 0.000368, 0.000684]
+    tipo: literatura
+    desc: Hemorragia intracraneal neonatal, parto espontáneo
+    fuente: Towner 1999 NEJM (1/1,900); rango ±30 % supuesto
+  hic_ventosa:
+    base: 0.001163   # 1/860
+    dist: [uniforme, 0.000814, 0.001512]
+    tipo: literatura
+    desc: Hemorragia intracraneal, ventosa
+    fuente: Towner 1999 (1/860); rango ±30 % supuesto
+  hic_forceps:
+    base: 0.001506   # 1/664
+    dist: [uniforme, 0.001054, 0.001958]
+    tipo: literatura
+    desc: Hemorragia intracraneal, fórceps
+    fuente: Towner 1999 (1/664); rango ±30 % supuesto
+  hic_cesarea_trabajo_parto:
+    base: 0.001103   # 1/907
+    dist: [uniforme, 0.000772, 0.001434]
+    tipo: literatura
+    desc: Hemorragia intracraneal, cesárea durante el trabajo de parto
+    fuente: Towner 1999 (1/907); rango ±30 % supuesto
+  trauma_grave_cesarea:
+    base: 0.002
+    dist: [uniforme, 0.001, 0.004]
+    tipo: supuesto
+    desc: Trauma neonatal grave tras cesárea en el segundo periodo (referencia)
+    fuente: Supuesto
+  mult_trauma_instrumento_medio:
+    base: 7.5
+    dist: [uniforme, 5.0, 10.0]
+    tipo: literatura
+    desc: Multiplicador del trauma neonatal grave del instrumento en plano medio frente a cesárea
+    fuente: Muraca 2017 CMAJ (5 a 10 veces)
+  mult_trauma_espontaneo:
+    base: 0.5
+    dist: [uniforme, 0.25, 1.0]
+    tipo: supuesto
+    desc: Trauma neonatal grave en parto espontáneo tras expulsivo prolongado, relativo a la cesárea en expulsivo
+    fuente: Supuesto
+  mult_trauma_instrumento_bajo:
+    base: 2.0
+    dist: [uniforme, 1.5, 3.0]
+    tipo: supuesto
+    desc: Igual que el anterior en plano bajo
+    fuente: Supuesto
+
+politica:
+  competencia_minima_plano_medio: 0.7   # solo operadores con c >= 0.7 instrumentan en plano medio (E4)
+  instrumento_primero: ventosa          # ventosa o forceps
+  instrumentacion_secuencial: false     # falla del primer instrumento -> cesárea (Towner 1999: secuencial 1/256 HIC)
+
+# Pesos para el índice compuesto de daño. Son JUICIOS DE VALOR ilustrativos; el comité debe fijarlos
+# (p. ej., con un panel Delphi). No provienen de la literatura.
+pesos_dano:
+  trauma_neonatal_grave: 1.0
+  hic: 1.0
+  oasis: 0.15
+  extension_histerotomia: 0.05
+  cesarea: 0.08   # incluye riesgos en embarazos futuros (Sandall 2018), valor ilustrativo

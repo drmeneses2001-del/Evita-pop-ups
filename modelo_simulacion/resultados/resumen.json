@@ -1,0 +1,249 @@
+{
+  "plano_medio_experto_(con_medio_menos_solo_bajo)_por_1000": {
+    "cesarea": -259.19,
+    "espontaneo": -1.459999999999989,
+    "ventosa": 260.65000000000003,
+    "forceps": 0.0,
+    "oasis": 13.919113599935153,
+    "hic": 0.016481420000000104,
+    "trauma_neonatal_grave": 2.0885931531396333,
+    "extension_histerotomia": -31.1028
+  },
+  "forceps_primero_menos_ventosa_primero_c0.9_por_1000": {
+    "cesarea": -33.669999999999995,
+    "espontaneo": 3.2500000000000027,
+    "ventosa": -683.5550000000001,
+    "forceps": 713.975,
+    "oasis": 33.539783387287166,
+    "hic": 0.24484337500000003,
+    "trauma_neonatal_grave": 0.13386556439501374,
+    "extension_histerotomia": -4.040399999999999
+  },
+  "umbral_competencia_E4_menor_dano_que_E3": 0.0,
+  "estrategia_menor_dano_por_competencia": {
+    "0.0": "E4",
+    "0.05": "E4",
+    "0.1": "E4",
+    "0.15": "E4",
+    "0.2": "E4",
+    "0.25": "E4",
+    "0.3": "E4",
+    "0.35": "E4",
+    "0.4": "E4",
+    "0.45": "E4",
+    "0.5": "E4",
+    "0.55": "E4",
+    "0.6": "E4",
+    "0.65": "E4",
+    "0.7": "E4",
+    "0.75": "E4",
+    "0.8": "E4",
+    "0.85": "E4",
+    "0.9": "E4",
+    "0.95": "E4",
+    "1.0": "E4"
+  },
+  "evpi_por_1000": {
+    "competencia_baja_(<0.4)": 0.0,
+    "competencia_media_(0.4-0.7)": 0.0,
+    "competencia_alta_(>0.7)": 0.0
+  },
+  "psa_cesareas_evitadas_E4_vs_E1": {
+    "media": 683.77675,
+    "p2.5": 448.84874999999994,
+    "p97.5": 925.1524999999999
+  },
+  "psa_cesareas_evitadas_E3_vs_E1": {
+    "media": 231.893875,
+    "p2.5": 107.04750000000007,
+    "p97.5": 372.00749999999994
+  },
+  "sensibilidad_pesos_cesarea": {
+    "0.01": {
+      "umbral_competencia_E4_mejor_que_E3": 0.4,
+      "mejor_en_c0.2": "E3",
+      "mejor_en_c0.5": "E4",
+      "mejor_en_c0.9": "E4",
+      "evpi_por_1000_global": 1.06633415118311
+    },
+    "0.02": {
+      "umbral_competencia_E4_mejor_que_E3": 0.0,
+      "mejor_en_c0.2": "E4",
+      "mejor_en_c0.5": "E4",
+      "mejor_en_c0.9": "E4",
+      "evpi_por_1000_global": 0.33716731270650513
+    },
+    "0.04": {
+      "umbral_competencia_E4_mejor_que_E3": 0.0,
+      "mejor_en_c0.2": "E4",
+      "mejor_en_c0.5": "E4",
+      "mejor_en_c0.9": "E4",
+      "evpi_por_1000_global": 0.0068750422052374915
+    },
+    "0.08": {
+      "umbral_competencia_E4_mejor_que_E3": 0.0,
+      "mejor_en_c0.2": "E4",
+      "mejor_en_c0.5": "E4",
+      "mejor_en_c0.9": "E4",
+      "evpi_por_1000_global": 0.0
+    },
+    "0.15": {
+      "umbral_competencia_E4_mejor_que_E3": 0.0,
+      "mejor_en_c0.2": "E4",
+      "mejor_en_c0.5": "E4",
+      "mejor_en_c0.9": "E4",
+      "evpi_por_1000_global": 0.0
+    }
+  },
+  "intercambio_E4_vs_E3_c0.5": {
+    "cesareas_evitadas_E4_vs_E3": 394.54999999999995,
+    "trauma_grave_adicional": 0.78823,
+    "hic_adicional": 0.0234882700000002,
+    "oasis_adicional": 31.55239999999999,
+    "cesareas_por_trauma_grave": 500.55186937822714
+  },
+  "intercambio_E4_vs_E3_c0.9": {
+    "cesareas_evitadas_E4_vs_E3": 684.46,
+    "trauma_grave_adicional": 2.376581100228943,
+    "hic_adicional": 0.03920119000000022,
+    "oasis_adicional": 36.664657677973544,
+    "cesareas_por_trauma_grave": 288.00195370318477
+  },
+  "intercambio_E4_vs_E3_c0.2": {
+    "cesareas_evitadas_E4_vs_E3": 358.63,
+    "trauma_grave_adicional": 1.212100360275442,
+    "hic_adicional": 0.020498599999999922,
+    "oasis_adicional": 38.619207205508836,
+    "cesareas_por_trauma_grave": 295.8748398676357
+  },
+  "emulador": {
+    "delta_dano_E4_vs_E3": {
+      "r2_prueba": 0.9762189985663257,
+      "importancia": {
+        "p_plano_medio": 0.19695152489472414,
+        "p_mala_posicion": -0.00011207579183017958,
+        "p_diag_prematuro": 0.03451521085255602,
+        "p_urgencia_fetal": 0.005782837635381399,
+        "p_ve_tiempo_prematuro": 0.018557587809708266,
+        "p_ve_tiempo_verdadera_oa": 0.03874699775163516,
+        "p_ve_tiempo_verdadera_op": -2.553466784136482e-05,
+        "p_exito_rotacion": 2.702625447665863e-05,
+        "p_instrumentado_practica_actual": 2.3512713878770518e-05,
+        "falla_ventosa_plano_bajo": 0.009163181428540145,
+        "rr_falla_forceps_vs_ventosa": 1.5212728460656243e-05,
+        "mult_falla_plano_medio": 0.0008617717917338008,
+        "k_competencia_falla": 0.007758445611082909,
+        "k_competencia_trauma": 0.014575006822652614,
+        "oasis_espontaneo": -1.8659725836234208e-05,
+        "oasis_ventosa": 0.020578770290765158,
+        "rr_oasis_forceps_vs_ventosa": -3.43536182782489e-05,
+        "extension_histerotomia_cesarea_expulsivo": 0.011070806729866055,
+        "hic_espontaneo": -5.938844392705534e-07,
+        "hic_ventosa": 1.2082872310792413e-05,
+        "hic_forceps": 1.7268063177555694e-05,
+        "hic_cesarea_trabajo_parto": 0.00012152481261418213,
+        "trauma_grave_cesarea": 0.0048136799659260435,
+        "mult_trauma_instrumento_medio": 0.0001197045809561037,
+        "mult_trauma_espontaneo": 1.5697415695425933e-05,
+        "mult_trauma_instrumento_bajo": 0.0010903128042630051,
+        "competencia": 1.6090816886574355
+      },
+      "sobol_primer_orden": {
+        "p_plano_medio": 0.07965670523900585,
+        "p_mala_posicion": 0.0004405868124777408,
+        "p_diag_prematuro": 0.01707037707238863,
+        "p_urgencia_fetal": 0.0017671902496063656,
+        "p_ve_tiempo_prematuro": 0.009332177149692785,
+        "p_ve_tiempo_verdadera_oa": 0.012168065516453502,
+        "p_ve_tiempo_verdadera_op": 0.0004685963594183717,
+        "p_exito_rotacion": 0.0003742571279163594,
+        "p_instrumentado_practica_actual": 0.00028647033056176404,
+        "falla_ventosa_plano_bajo": 0.005330994122898687,
+        "rr_falla_forceps_vs_ventosa": 0.0003283885841265324,
+        "mult_falla_plano_medio": 0.0005706047551391487,
+        "k_competencia_falla": 0.00036163962549629573,
+        "k_competencia_trauma": 0.0006446887392990027,
+        "oasis_espontaneo": 0.00045863363775297197,
+        "oasis_ventosa": 0.008130965759930133,
+        "rr_oasis_forceps_vs_ventosa": 0.0007871944022808881,
+        "extension_histerotomia_cesarea_expulsivo": 0.005517569537868608,
+        "hic_espontaneo": 0.00045706412688184707,
+        "hic_ventosa": 0.00043453340427083417,
+        "hic_forceps": 0.000460188625992003,
+        "hic_cesarea_trabajo_parto": 0.0003657436533941311,
+        "trauma_grave_cesarea": 0.0028257358728450183,
+        "mult_trauma_instrumento_medio": 0.000615517927553036,
+        "mult_trauma_espontaneo": 0.0003231791428135525,
+        "mult_trauma_instrumento_bajo": 0.0008572740203618578,
+        "competencia": 0.8090747942345087
+      }
+    },
+    "cesareas_evitadas_E4_vs_E1": {
+      "r2_prueba": 0.987782968391999,
+      "importancia": {
+        "p_plano_medio": 0.2938387257895759,
+        "p_mala_posicion": 4.498315561585198e-05,
+        "p_diag_prematuro": 0.027833646646214072,
+        "p_urgencia_fetal": 0.0045009418051876636,
+        "p_ve_tiempo_prematuro": 0.015121618719096586,
+        "p_ve_tiempo_verdadera_oa": 0.020723776303944362,
+        "p_ve_tiempo_verdadera_op": 9.15292254922484e-05,
+        "p_exito_rotacion": -6.37284729991916e-05,
+        "p_instrumentado_practica_actual": 0.005299325293148971,
+        "falla_ventosa_plano_bajo": 0.016068663371224645,
+        "rr_falla_forceps_vs_ventosa": -5.90290241830882e-06,
+        "mult_falla_plano_medio": 0.002143363909470508,
+        "k_competencia_falla": 0.019367255273344697,
+        "k_competencia_trauma": -7.22803037317421e-06,
+        "oasis_espontaneo": -4.356922043939893e-05,
+        "oasis_ventosa": -1.2605341284743776e-05,
+        "rr_oasis_forceps_vs_ventosa": -1.5374974016524322e-05,
+        "extension_histerotomia_cesarea_expulsivo": -3.3177380962401414e-05,
+        "hic_espontaneo": -6.457087039946074e-05,
+        "hic_ventosa": -3.879568046005754e-06,
+        "hic_forceps": -1.3008748427545402e-05,
+        "hic_cesarea_trabajo_parto": -1.6767320067057057e-05,
+        "trauma_grave_cesarea": 2.1914383366006262e-05,
+        "mult_trauma_instrumento_medio": -1.5184167261539373e-06,
+        "mult_trauma_espontaneo": -1.0821937631688705e-05,
+        "mult_trauma_instrumento_bajo": 3.932954509524578e-05,
+        "competencia": 1.7294708958764098
+      },
+      "sobol_primer_orden": {
+        "p_plano_medio": 0.10370273239229667,
+        "p_mala_posicion": 0.0005562833034017436,
+        "p_diag_prematuro": 0.011412641220532645,
+        "p_urgencia_fetal": 0.0020402482449857215,
+        "p_ve_tiempo_prematuro": 0.0038027350224363638,
+        "p_ve_tiempo_verdadera_oa": 0.0104519931221931,
+        "p_ve_tiempo_verdadera_op": 0.0004758670563972602,
+        "p_exito_rotacion": 0.000393079688501484,
+        "p_instrumentado_practica_actual": 0.0016220916951937827,
+        "falla_ventosa_plano_bajo": 0.007333647625454758,
+        "rr_falla_forceps_vs_ventosa": 0.0003429952210967733,
+        "mult_falla_plano_medio": 0.000673973327826421,
+        "k_competencia_falla": 0.000391741441748303,
+        "k_competencia_trauma": 0.0003184858104297884,
+        "oasis_espontaneo": 0.0004759819051352723,
+        "oasis_ventosa": 0.00045227734668604484,
+        "rr_oasis_forceps_vs_ventosa": 0.0006302584768678874,
+        "extension_histerotomia_cesarea_expulsivo": 0.00030337557449927594,
+        "hic_espontaneo": 0.0004866029539857298,
+        "hic_ventosa": 0.0005260910998612934,
+        "hic_forceps": 0.0003762817726792609,
+        "hic_cesarea_trabajo_parto": 0.00044515192862115677,
+        "trauma_grave_cesarea": 0.00032963397304538555,
+        "mult_trauma_instrumento_medio": 0.0005238343759714439,
+        "mult_trauma_espontaneo": 0.00038960960961132823,
+        "mult_trauma_instrumento_bajo": 0.0003829981339458911,
+        "competencia": 0.7862548018829884
+      }
+    }
+  },
+  "corridas": {
+    "n_caso_base": 200000,
+    "n_barrido": 100000,
+    "iteraciones_psa": 2000,
+    "n_por_iteracion": 20000
+  }
+}
